@@ -1,0 +1,12 @@
+{
+  "name": "dtram/328/dating",
+  "authors": [
+    {
+      "name": "Duc Tram",
+      "email": "tram.duc@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
