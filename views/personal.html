@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Information</title>
+</head>
+<body>
+<h1>Personal Information</h1>
+<div>
+    <form action="profile" method="post">
+        <label for="fname">First name</label><br>
+        <input type="text" id="fname" name="fname"><br>
+
+        <label for="lname">Last name</label><br>
+        <input type="text" id="lname" name="lname"><br>
+
+        <label for="age">Age</label><br>
+        <input type="text" id="age" name="age"><br>
+
+
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">male</label><br>
+
+
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">female</label><br>
+
+        <input type="radio" id="nonbinary" name="gender" value="nonbinary">
+        <label for="nonbinary">Non-binary</label><br>
+
+        <label for="phone">Phone Number</label><br>
+        <input type="text" id="phone" name="phone"><br>
+
+        <!-- get food -->
+        <div class="form-group">
+            <label for="food" class="col-sm-4 control-label">What food would you like to order?</label>
+            <div class="col-sm-4"><input class="form-control" type="text"
+                                         name="food" id="food" value="{{ @userFood }}"></div>
+
+
+            <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+</body>
+</html>
