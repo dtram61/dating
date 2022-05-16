@@ -3,16 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
+    <!-- Bootstrap core CSS -->
+    <link href="styles/min.css" rel="stylesheet">
 </head>
 <body>
+<div class="form-box row mt-3 border">
+    <div class="col-12 p-3">
 <h1>Profile</h1>
-<hr>
-<form action="interests" method="post" class="form-control">
-    <label for="email">Enter your email:</label><br>
-    <input type="email" id="email" name="email"><br>
-<!-- where state used to be -->
 
-    <label for="state">State</label><br>
+<form action="interests" method="post" class="form-control">
+
+    <div class="form-row">
+        <!-- email -->
+        <div class="col-7">
+
+
+    <label for="email"><b>Email:</b></label><br>
+    <input  class="form-control" type="email" id="email" name="email"><br>
+        </div>
+
+        <!-- biography -->
+        <label for="biography"><b>Biography</b></label><br>
+        <textarea name="biography" id="biography" cols="50" rows="10"></textarea><br>
+
+<!-- where state used to be -->
+        <div class="col-7">
+    <label for="state"><b>State</b></label><br>
     <select name="state" id="state">
         <option value="Alabama">Alabama</option>
         <option value="Alaska">Alaska</option>
@@ -63,8 +79,12 @@
         <option value="West Virginia">West Virginia</option>
         <option value="Wisconsin">Wisconsin</option>
         <option value="Wyoming">Wyoming</option>
-    </select>
-    <label for="seeking">Seeking</label><br>
+    </select><br>
+        </div>
+
+        <div class="col-7">
+
+        <label for="seeking">Seeking</label><br>
     <input type="radio" id="seeking" name="seeking" value="male">
 
     <label for="seeking">Male</label><br>
@@ -72,11 +92,18 @@
     <input type="radio" id="female" name="seeking" value="female">
     <label for="seeking">Female</label><br>
 
-    <label for="biography">Biography</label><br>
-    <textarea name="biography" id="biography" cols="50" rows="10"></textarea>
+        </div>
 
-    <input type="submit">
 
+
+
+    </div>
+    <!--Next button-->
+    <div class="col-12">
+        <button class="btn  float-right mt-3 px-3" type="submit">Next ></button>
+    </div>
 </form>
+    </div>
+</div>
 </body>
 </html>

@@ -3,22 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Summary</title>
+    <!-- Bootstrap core CSS -->
+    <link href="styles/min.css" rel="stylesheet">
 </head>
 <body>
-<h1> Summary</h1>
-<p>Name: {{ @SESSION.fname}} {{ @SESSION.lname}}</p>
+<div class="form-box row mt-3 border">
+    <div class="col-12 p-3">
+        <h1> Summary</h1>
+        <div class="container border">
 
-<p>Gender: {{ @SESSION.gender}}</p>
-<p>Age: {{ @SESSION.age}}</p>
-<p>Phone: {{ @SESSION.phone}}</p>
-<p>Email: {{ @SESSION.email}}</p>
-<p>State: {{ @SESSION.state}}</p>
-<p>Seeking: {{ @SESSION.seeking}}</p>
-<p>Interests:  {{ @SESSION.interests}}</p>
-<p>Biography:  {{ @SESSION.biography}}</p>
+            <p>Name: {{ @SESSION.fname}} {{ @SESSION.lname}}</p>
+        </div>
+        <div class="container border">
+
+            <p>Gender: {{ @SESSION.gender}}</p>
+        </div>
+        <div class="container border">
+
+            <p>Age: {{ @SESSION.age}}</p>
+        </div>
+
+        <div class="container border">
+
+
+            <p>Phone: {{ @SESSION.phone}}</p>
+        </div>
+
+
+        <div class="container border">
+
+
+            <p>Email: {{ @SESSION.email}}</p>
+        </div>
+
+        <div class="container border">
+
+
+            <p>State: {{ @SESSION.state}}</p>
+        </div>
+
+
+        <div class="container border">
+            <p>Seeking: {{ @SESSION.seeking}}</p>
+
+        </div>
+        <div class="container border">
+
+            <p>Interests: {{ @SESSION.interests}}</p>
+        </div>
+
+    </div>
+</div>
+        <div class="float-right">
+
+
+            <p>Biography: {{ @SESSION.biography}}</p>
+        </div>
 
 
 
+
+<!--Next button-->
+<div class="container">
+    <div class="col-md-12 text-center">
+        <button class="btn btn-primary" type="submit">Contact Me!</button>
+    </div>
+</div>
 
 </body>
 </html>

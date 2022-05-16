@@ -3,26 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Interests</title>
+    <!-- Bootstrap core CSS -->
+    <link href="styles/min.css" rel="stylesheet">
 </head>
 <body>
+<div class="form-box row mt-3 border">
+    <div class="col-12 p-3">
 <h1>Interests</h1>
 <form action="summary" method="post" class="form-horizontal">
 
  <div class="form-group">
-     <label class="col-sm-2 control-label">Select Interests</label>
+     <label class="col-sm-2 control-label"> <b>In-door Interests</b></label>
      <div class="col-sm-4">
-         <label><input type="checkbox" name="interests[]" value="Walking">Walking</label>
-         <label><input type="checkbox" name="interests[]" value="Jogging">Jogging</label>
-         <label><input type="checkbox" name="interests[]" value="Eating">Eating</label>
+         <label><input type="checkbox" name="interests[]" value="tv">tv</label>
 
-     </div>
-     <div class="col-xs-3 ">
-         <button class="btn btn-primary" type="submit">Next</button>
-     </div>
+         <label><input type="checkbox" name="interests[]" value="movies">movies</label>
+         <label><input type="checkbox" name="interests[]" value="cooking">cooking</label>
+         <label><input type="checkbox" name="interests[]" value="board games">board games</label>
+     </div><br>
+     <div class="col-sm-4">
+         <label><input type="checkbox" name="interests[]" value="puzzles">puzzles</label>
 
-
+         <label><input type="checkbox" name="interests[]" value="reading">reading</label>
+         <label><input type="checkbox" name="interests[]" value="playing cards">playing cards</label>
+         <label><input type="checkbox" name="interests[]" value="video games">video games</label>
+     </div><br>
  </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label"><b> Out-door Interests</b></label>
+        <div class="col-sm-4">
+            <label><input type="checkbox" name="interests[]" value="hiking">hiking</label>
+
+            <label><input type="checkbox" name="interests[]" value="biking">biking</label>
+            <label><input type="checkbox" name="interests[]" value="collecting">collecting</label>
+            <label><input type="checkbox" name="interests[]" value="swimming">swimming</label>
+        </div><br>
+        <div class="col-sm-4">
+            <label><input type="checkbox" name="interests[]" value="collecting">collecting</label>
+
+            <label><input type="checkbox" name="interests[]" value="reading">walking</label>
+            <label><input type="checkbox" name="interests[]" value="playing cards">climbing</label>
+            <label><input type="checkbox" name="interests[]" value="mountaineering">mountaineering</label>
+        </div><br>
+        <!--Next button-->
+        <div class="col-12">
+            <button class="btn  float-right mt-3 px-3" type="submit">Next ></button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
 </form>
+</div>
 </div>
 </body>
 </html>
