@@ -14,25 +14,34 @@
 
         <h1>Personal Information</h1>
 
-        <form action="profile" method="post">
+        <form action="personal" method="post">
            <div class="form-row">
             <!-- first name -->
             <div class="col-7">
                 <label for="fname"><b>First name</b></label><br>
-                <input class="form-control" type="text" id="fname" name="fname"><br>
+                <input class="form-control" type="text" id="fname" name="fname" value="{{ @fname }}"><br>
             </div>
 
-            <!-- privacy policy -->
-            <div class="col border bg-light">
-                <p>Note: All information entered is protected by our privacy policy.
-                    Profile information can only be viewed by others with your permisson. </p>
-            </div>
+
+
+               <!-- display error if there is one -->
+               <check if="{{ isset(@errors['fname']) }}">
+                   <span class="text-danger">{{ @errors['fname'] }}</span>
+               </check>
+           </div>
+
 
             <!-- last name -->
             <div class="col-7">
                 <label for="lname"><b>Last name</b></label><br>
                 <input class="form-control" type="text" id="lname" name="lname"><br>
             </div>
+
+               <!-- privacy policy -->
+               <div class="col border bg-light">
+                   <p>Note: All information entered is protected by our privacy policy.
+                       Profile information can only be viewed by others with your permisson. </p>
+               </div>
 
             <!-- age -->
             <div class="col-7">
