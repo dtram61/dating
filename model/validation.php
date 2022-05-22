@@ -14,7 +14,7 @@
             return false;
         } else if (!is_numeric($age)) {
             return false;
-        } else if ($age >= 18 && $age <= 122) {
+        } else if ($age >= 18 && $age <= 118) {
             return true;
         }
     }
