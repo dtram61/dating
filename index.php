@@ -79,11 +79,13 @@ $f3->route('GET|POST /personal', function () use ($f3) {
 
         $gender = isset($_POST['gender']) ? $_POST['gender'] : "";
 
-        if (validGender($gender)) {
+        $_SESSION['gender'] = $gender;
+      /*  if (validGender($gender)) {
             $_SESSION['gender'] = $gender;
         } else {
             $f3->set('errors["gender"]', 'Gender must be selected');
         }
+      */
 
 
 
@@ -99,7 +101,7 @@ $f3->route('GET|POST /personal', function () use ($f3) {
         if (validAge($age)) {
             $_SESSION['age'] = $age;
         } else {
-            $f3->set('errors["age"]', 'Age must be between 18 or 122');
+            $f3->set('errors["age"]', 'Age must be between 18 or 118');
         }
 
 
