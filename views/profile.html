@@ -11,15 +11,21 @@
     <div class="col-12 p-3">
 <h1>Profile</h1>
 
-<form action="interests" method="post" class="form-control">
+<form action="profile" method="post" class="form-control">
 
     <div class="form-row">
         <!-- email -->
         <div class="col-7">
+            <label for="email"><b>Email:</b></label><br>
+            <input  class="form-control" type="email" id="email" name="email"><br>
+        </div>
 
-
-    <label for="email"><b>Email:</b></label><br>
-    <input  class="form-control" type="email" id="email" name="email"><br>
+        <!-- display error if there is email error  -->
+        <div class="col-md-12">
+            <check if="{{ isset(@errors['email']) }}">
+                <span class="text-danger">{{ @errors['email'] }}</span>
+            </check>
+            <br>
         </div>
 
         <!-- biography -->
@@ -29,7 +35,7 @@
 <!-- where state used to be -->
         <div class="col-7">
     <label for="state"><b>State</b></label><br>
-    <select name="state" id="state">
+    <select name="state" id="state"  value="{{ @state }}">
         <option value="Alabama">Alabama</option>
         <option value="Alaska">Alaska</option>
         <option value="Arizona">Arizona</option>

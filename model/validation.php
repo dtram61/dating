@@ -1,50 +1,48 @@
 <?php
 
-class Validation
-{
+
     // validate name
-   static function validName($name)
+    function validName($name)
     {
         return strlen(trim($name)) >= 2;
     }
 
     // validate age
-     function validAge()
+     function validAge($age)
     {
         if ($age == "") {
             return false;
         } else if (!is_numeric($age)) {
             return false;
-        } else if ($age >= 18) {
-            return true;
-        } else if ($age <= 122) //122 is the oldest person to ever live
-        {
+        } else if ($age >= 18 && $age <= 122) {
             return true;
         }
     }
+
+// validate phone number
+function validPhone($phone)
+{
+    return strlen($phone) == 10;
+}
 
      function validGender($gender)
     {
         return in_array($gender, getGender());
     }
-// validate phone number
-      function validPhone($phone)
-    {
-        return strlen($phone) == 10;
-    }
-// validate email
-     function validEmail()
-    {
-        if(filter_var($email. FILTER_VALIDATE_EMAIL))
-        {
-            return true;
-        }
 
-        else
-        {
-            return true;
-        }
+// validate email
+function validEmail($email)
+{
+    if(filter_var($email, FILTER_VALIDATE_EMAIL))
+    {
+        return true;
     }
+
+    else
+    {
+        return false;
+    }
+}
 // validate outdoor activities
      function validOutdoor($outdoor)
     {
@@ -56,4 +54,3 @@ class Validation
         return in_array($indoor, Datalayer::getIndoorInterest());
     }
 
-}

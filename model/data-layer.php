@@ -1,16 +1,7 @@
 <?php
 
-class Datalayer
-{
-    function getName()
-    {
 
-    }
 
-     function getAge()
-    {
-
-    }
 
      function getGender()
     {
@@ -26,20 +17,14 @@ class Datalayer
         , "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming");
     }
 
-     function getPhone()
-    {
 
-    }
 
      function getSeeking()
     {
         return array("male", "female", "nonbinary");
     }
 
-      function getEmail()
-    {
 
-    }
 
      function getIndoorInterest()
     {
@@ -54,4 +39,4 @@ class Datalayer
 
 
 
-}
+

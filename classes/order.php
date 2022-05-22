@@ -11,6 +11,7 @@ class Order
     {
         $this->_lname = "";
         $this->_fname = "";
+        $this->_name = "";
     }
 
    // public function getfname(): string
