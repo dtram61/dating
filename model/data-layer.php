@@ -26,7 +26,7 @@
 
     function getIndoorInterest()
     {
-        return array("tv", "movies", "cooking", "board games", "puzzles", "reading", "playing cards", "video games");
+        return array("tv", "movies", "cooking", "board games", "puzzles", "reading", "playing cards", "video games" );
     }
 
      function getOutdoorInterest()

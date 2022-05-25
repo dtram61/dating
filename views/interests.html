@@ -10,42 +10,62 @@
 <div class="form-box row mt-3 border">
     <div class="col-12 p-3">
 <h1>Interests</h1>
-<form action="summary" method="post" class="form-horizontal">
+<form action="#" method="post" class="form-horizontal">
 
  <div class="form-group">
      <label class="col-sm-2 control-label"> <b>In-door Interests</b></label>
      <div class="col-sm-4">
-         <label><input type="checkbox" name="interests[]" value="tv">tv</label>
+         <label><input type="checkbox" name="interestsIndoor[]" value="tv">tv</label>
 
-         <label><input type="checkbox" name="interests[]" value="movies">movies</label>
-         <label><input type="checkbox" name="interests[]" value="cooking">cooking</label>
-         <label><input type="checkbox" name="interests[]" value="board games">board games</label>
+         <label><input type="checkbox" name="interestsIndoor[]" value="movies">movies</label>
+         <label><input type="checkbox" name="interestsIndoor[]" value="cooking">cooking</label>
+         <label><input type="checkbox" name="interestsIndoor[]" value="board games">board games</label>
      </div><br>
      <div class="col-sm-4">
-         <label><input type="checkbox" name="interests[]" value="puzzles">puzzles</label>
+         <label><input type="checkbox" name="interestsIndoor[]" value="puzzles">puzzles</label>
 
-         <label><input type="checkbox" name="interests[]" value="reading">reading</label>
-         <label><input type="checkbox" name="interests[]" value="playing cards">playing cards</label>
-         <label><input type="checkbox" name="interests[]" value="video games">video games</label>
+         <label><input type="checkbox" name="interestsIndoor[]" value="reading">reading</label>
+         <label><input type="checkbox" name="interestsIndoor[]" value="playing cards">playing cards</label>
+         <label><input type="checkbox" name="interestsIndoor[]" value="video games">video games</label>
      </div><br>
  </div>
+
+<!-- put error message and have it display -->
+
+    <!-- display error if there is interests error/spoofing  -->
+    <div class="col-md-12">
+        <check if="{{ isset(@errors['interests']) }}">
+            <span class="text-danger">{{ @errors['interestsIndoor'] }}</span>
+        </check>
+        <br>
+    </div>
 
     <div class="form-group">
         <label class="col-sm-2 control-label"><b> Out-door Interests</b></label>
         <div class="col-sm-4">
-            <label><input type="checkbox" name="interests[]" value="hiking">hiking</label>
+            <label><input type="checkbox" name="interestsOutdoor[]" value="hiking">hiking</label>
 
-            <label><input type="checkbox" name="interests[]" value="biking">biking</label>
-            <label><input type="checkbox" name="interests[]" value="collecting">collecting</label>
-            <label><input type="checkbox" name="interests[]" value="swimming">swimming</label>
+            <label><input type="checkbox" name="interestsOutdoor[]" value="biking">biking</label>
+            <label><input type="checkbox" name="interestsOutdoor[]" value="collecting">collecting</label>
+            <label><input type="checkbox" name="interestsOutdoor[]" value="swimming">swimming</label>
         </div><br>
         <div class="col-sm-4">
-            <label><input type="checkbox" name="interests[]" value="camping">camping</label>
+            <label><input type="checkbox" name="interestsOutdoor[]" value="camping">camping</label>
 
-            <label><input type="checkbox" name="interests[]" value="walking">walking</label>
-            <label><input type="checkbox" name="interests[]" value="climbing">climbing</label>
-            <label><input type="checkbox" name="interests[]" value="mountaineering">mountaineering</label>
+            <label><input type="checkbox" name="interestsOutdoor[]" value="walking">walking</label>
+            <label><input type="checkbox" name="interestsOutdoor[]" value="climbing">climbing</label>
+            <label><input type="checkbox" name="interestsOutdoor[]" value="mountaineering">mountaineering</label>
         </div><br>
+
+        <!-- display error if there is interests error/spoofing  -->
+        <div class="col-md-12">
+            <check if="{{ isset(@errors['interests']) }}">
+                <span class="text-danger">{{ @errors['interestsOutdoor'] }}</span>
+            </check>
+            <br>
+        </div>
+
+
         <!--Next button-->
         <div class="col-12">
             <button class="btn  float-right mt-3 px-3" type="submit">Next ></button>

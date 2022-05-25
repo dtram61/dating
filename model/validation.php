@@ -46,11 +46,11 @@ function validEmail($email)
 // validate outdoor activities
      function validOutdoor($outdoor)
     {
-        return in_array($outdoor, Datalayer:: getOutdoorInterest());
+        return in_array($outdoor, getOutdoorInterest());
     }
 // validate indoor activities
-     function validIndoor($indoor)
+     function validIndoor($interestsIndoor)
     {
-        return in_array($indoor, Datalayer::getIndoorInterest());
+        return in_array($interestsIndoor, getIndoorInterest());
     }
 

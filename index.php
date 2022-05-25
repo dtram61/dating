@@ -7,8 +7,9 @@ error_reporting(E_ALL);
 
 //Require the autoload file
 require_once('vendor/autoload.php');
-require_once('model/validation.php');
 require_once('model/data-layer.php');
+require_once('model/validation.php');
+
 
 //Start session()
 session_start();
@@ -80,12 +81,12 @@ $f3->route('GET|POST /personal', function () use ($f3) {
         $gender = isset($_POST['gender']) ? $_POST['gender'] : "";
 
         $_SESSION['gender'] = $gender;
-      /*  if (validGender($gender)) {
-            $_SESSION['gender'] = $gender;
-        } else {
-            $f3->set('errors["gender"]', 'Gender must be selected');
-        }
-      */
+        /*  if (validGender($gender)) {
+              $_SESSION['gender'] = $gender;
+          } else {
+              $f3->set('errors["gender"]', 'Gender must be selected');
+          }
+        */
 
 
 
@@ -189,33 +190,49 @@ $f3->route('GET|POST /interests', function () use ($f3) {
 
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+// dump post array , if array has nothing in it
         var_dump($_POST);
 
-        // validate indoor and outdoor interests
-        $interests = $_POST['interests'];
-
-        $f3->set('interests', $interests);
+        // validate indoor and outdoor interests //right now we are trying to put nothing into a variable
 
 
 
-        $interests = isset($_POST['interests']) ? $_POST['interests'] : "";
 
-       if (validIndoor($interests)) {
-            $_SESSION['interests'] = $interests;
-        } else {
-            $f3->set('errors["interests"]', 'Please select some interests');
+// if the array exists then we can get the value
+
+        if (isset($_POST['interestsIndoor']) AND isset($_POST['interestsIndoor']) ) {
+            $interestsIndoor = $_POST['interestsIndoor'];
+            $interestsOutdoor = $_POST['interestsOutdoor'];
+        }
+        else {
+            $interestsIndoor = "";
+            $interestsOutdoor = "";
         }
 
+        $f3->set('interestsIndoor', $interestsIndoor);
+        $f3->set('interestsOutdoor', $interestsOutdoor);
 
-       // redirect to profile
-        if (empty($f3->get('errors'))) {
-            header('location: summary');
+        $interestsIndoor = isset($_POST['interestsIndoor']) ? $_POST['interestsIndoor'] : ""; // this is conditional operator learn more about it.
+        $interestsOutdoor = isset($_POST['interestsOutdoor']) ? $_POST['interestsOutdoor'] : ""; // this is conditional operator learn more about it.
+
+        if (($interestsIndoor == "") AND ($interestsOutdoor == "")) {
+            // redirect to profile
+            if (empty($f3->get('errors'))) {
+                header('location: summary');
+            }
+        } else if (validIndoor($interestsIndoor) AND validOutdoor($interestsOutdoor) ) {
+            $_SESSION['interestsIndoor'] = $interestsIndoor;
+            $_SESSION['interestsOutdoor'] = $interestsOutdoor;
+
+            // redirect to profile
+            if (empty($f3->get('errors'))) {
+                header('location: summary');
+            }
         }
+            else {
+                $f3->set('errors["interests"]', 'Invalid interests selected');
+            }
     }
-
-
-
     $view = new Template();
     echo $view->render('views/interests.html');
 });
@@ -223,7 +240,9 @@ $f3->route('GET|POST /interests', function () use ($f3) {
 // Create a route for profile summary
 $f3->route('GET|POST /summary', function () {
 
-$_SESSION['interests'] = implode(", ", $_POST['interests']);
+  // $_SESSION['interestsIndoor'] = implode(", ", $_POST['interestsIndoor']);
+ //  $_SESSION['interestsOutdoor'] = implode(", ", $_POST['interestsOutdoor']);
+
 
     $view = new Template();
     echo $view->render('views/summary.html');
