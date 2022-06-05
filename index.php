@@ -174,12 +174,12 @@ $f3->route('GET|POST /profile', function () use ($f3) {
         if (empty($f3->get('errors'))) {
 
             if($_SESSION['profile'] instanceof premium) {
-            header('location: interests');
-        }
+                header('location: interests');
+            }
             else {
                 header('location: summary');
             }
-          //  header('location: interests');
+            //  header('location: interests');
         }
 
     }
@@ -236,9 +236,9 @@ $f3->route('GET|POST /interests', function () use ($f3) {
                 header('location: summary');
             }
         }
-            else {
-                $f3->set('errors["interests"]', 'Invalid interests selected');
-            }
+        else {
+            $f3->set('errors["interests"]', 'Invalid interests selected');
+        }
     }
     $view = new Template();
     echo $view->render('views/interests.html');
