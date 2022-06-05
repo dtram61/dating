@@ -200,7 +200,7 @@ $f3->route('GET|POST /interests', function () use ($f3) {
 
 // if the array exists then we can get the value
 
-        if (isset($_POST['interestsIndoor']) AND isset($_POST['interestsIndoor']) ) {
+        if (isset($_POST['interestsIndoor']) AND isset($_POST['interestsOutdoor']) ) {
             $interestsIndoor = $_POST['interestsIndoor'];
             $interestsOutdoor = $_POST['interestsOutdoor'];
         }
@@ -240,8 +240,8 @@ $f3->route('GET|POST /interests', function () use ($f3) {
 // Create a route for profile summary
 $f3->route('GET|POST /summary', function () {
 
-  // $_SESSION['interestsIndoor'] = implode(", ", $_POST['interestsIndoor']);
- //  $_SESSION['interestsOutdoor'] = implode(", ", $_POST['interestsOutdoor']);
+   $_SESSION['interestsIndoor'] = implode(", ", $_POST['interestsIndoor']);
+   $_SESSION['interestsOutdoor'] = implode(", ", $_POST['interestsOutdoor']);
 
 
     $view = new Template();
