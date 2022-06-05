@@ -22,7 +22,7 @@ $con = new Controller($f3);
 
 
 //Create an instance of the Base class
-$f3->route('GET /', function () {
+$f3->route('GET /', function () { // you can keep it like this
     //echo '<h1>Hello, world! </h1>';
 
     $GLOBALS['con']->home();
@@ -81,15 +81,6 @@ $f3->route('GET|POST /personal', function () use ($f3) {
         $gender = isset($_POST['gender']) ? $_POST['gender'] : "";
 
         $_SESSION['gender'] = $gender;
-        /*  if (validGender($gender)) {
-              $_SESSION['gender'] = $gender;
-          } else {
-              $f3->set('errors["gender"]', 'Gender must be selected');
-          }
-        */
-
-
-
 
         // validate and submit age information
 
@@ -223,6 +214,8 @@ $f3->route('GET|POST /interests', function () use ($f3) {
         } else if (validIndoor($interestsIndoor) AND validOutdoor($interestsOutdoor) ) {
             $_SESSION['interestsIndoor'] = $interestsIndoor;
             $_SESSION['interestsOutdoor'] = $interestsOutdoor;
+            $_SESSION['interestsIndoor'] = implode(", ", $interestsIndoor);
+            $_SESSION['interestsOutdoor'] = implode(", ", $interestsOutdoor);
 
             // redirect to profile
             if (empty($f3->get('errors'))) {
@@ -240,8 +233,7 @@ $f3->route('GET|POST /interests', function () use ($f3) {
 // Create a route for profile summary
 $f3->route('GET|POST /summary', function () {
 
-   $_SESSION['interestsIndoor'] = implode(", ", $_POST['interestsIndoor']);
-   $_SESSION['interestsOutdoor'] = implode(", ", $_POST['interestsOutdoor']);
+
 
 
     $view = new Template();
