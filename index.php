@@ -97,7 +97,6 @@ $f3->route('GET|POST /personal', function () use ($f3) {
         }
 
 
-
         // validate phone number
         $phone = $_POST['phone'];
 
@@ -110,6 +109,14 @@ $f3->route('GET|POST /personal', function () use ($f3) {
         } else {
             $f3->set('errors["phone"]', 'Phone numbers must contain 10 numbers ');
         }
+
+        // check if premium has been checked off or not
+        if (isset($_POST['premium'])) {
+            $profile = new Premium();
+        } else {
+            $profile = new Membership();
+        }
+        $_SESSION['profile'] = $profile;
 
 
         // redirect to profile
@@ -163,9 +170,16 @@ $f3->route('GET|POST /profile', function () use ($f3) {
         $f3->set('seeking', getSeeking());
 
 
-        // redirect to interests
+        // redirect to interests if there are no errors and the profile is a premium profile
         if (empty($f3->get('errors'))) {
+
+            if($_SESSION['profile'] instanceof premium) {
             header('location: interests');
+        }
+            else {
+                header('location: summary');
+            }
+          //  header('location: interests');
         }
 
     }
