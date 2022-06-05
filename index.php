@@ -228,8 +228,9 @@ $f3->route('GET|POST /interests', function () use ($f3) {
         } else if (validIndoor($interestsIndoor) AND validOutdoor($interestsOutdoor) ) {
             $_SESSION['interestsIndoor'] = $interestsIndoor;
             $_SESSION['interestsOutdoor'] = $interestsOutdoor;
-            $_SESSION['interestsIndoor'] = implode(", ", $interestsIndoor);
-            $_SESSION['interestsOutdoor'] = implode(", ", $interestsOutdoor);
+           // $_SESSION['interestsIndoor'] = implode(", ", $interestsIndoor);
+            //$_SESSION['interestsOutdoor'] = implode(", ", $interestsOutdoor);
+
 
             // redirect to profile
             if (empty($f3->get('errors'))) {
@@ -246,7 +247,8 @@ $f3->route('GET|POST /interests', function () use ($f3) {
 
 // Create a route for profile summary
 $f3->route('GET|POST /summary', function () {
-
+    $_SESSION['interestsIndoor'] = implode(", ", $_POST['interestsIndoor']);
+    $_SESSION['interestsOutdoor'] = implode(", ", $_POST['interestsOutdoor']);
 
 
 
