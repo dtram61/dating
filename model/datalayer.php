@@ -1,14 +1,15 @@
 <?php
 
+class Datalayer
+{
 
 
-
-    function getGender()
+   static function getGender()
     {
         return array("male", "female", "non-binary");
     }
 
-    function getState()
+   static function getState()
     {
         return array("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia",
             "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan",
@@ -18,23 +19,23 @@
     }
 
 
-    function getSeeking()
+   static function getSeeking()
     {
         return array("male", "female", "nonbinary");
     }
 
 
-    function getIndoorInterest()
-    {
-        return array("tv", "movies", "cooking", "board games", "puzzles", "reading", "playing cards", "video games" );
+  static  function getIndoorInterest()
+  {
+        return array("tv", "movies", "cooking", "board games", "puzzles", "reading", "playing cards", "video games");
     }
 
-     function getOutdoorInterest()
-    {
+  static  function getOutdoorInterest()
+  {
         return array("hiking", "biking", "collecting", "swimming", "camping", "walking", "climbing", "mountaineering");
     }
 
-
+}
 
 
 

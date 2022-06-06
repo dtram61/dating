@@ -1,8 +1,40 @@
 <?php
 
 class Premium extends Membership{
-        private  $_interestsIndoor;
-        private  $_interestsOutdoor;
+        private array $_interestsIndoor;
+        private array  $_interestsOutdoor;
+
+    /**
+     * @return array
+     */
+    public function getInterestsIndoor(): array
+    {
+        return $this->_interestsIndoor;
+    }
+
+    /**
+     * @param array $interestsIndoor
+     */
+    public function setInterestsIndoor(array $interestsIndoor)
+    {
+        $this->_interestsIndoor = $interestsIndoor;
+    }
+
+    /**
+     * @return array
+     */
+    public function getInterestsOutdoor(): array
+    {
+        return $this->_interestsOutdoor;
+    }
+
+    /**
+     * @param array $interestsOutdoor
+     */
+    public function setInterestsOutdoor(array $interestsOutdoor)
+    {
+        $this->_interestsOutdoor = $interestsOutdoor;
+    }
 
 //
 //        public function __construct()
@@ -17,37 +49,5 @@ class Premium extends Membership{
 //            $this->$interestsOutdoor = array("hiking", "biking", "collecting", "swimming", "camping", "walking", "climbing", "mountaineering");
 //        }
 
-    /** This will get the indoor interests (getter)
-     * @return string that is indoor interests
-     */
-    public function getInterestsIndoor(): string
-    {
-        return $this->_interestsIndoor;
-    }
 
-    /**This will set the interests indoor (setter)
-     * @param string $interestsIndoor
-     * @return void
-     */
-    public function setInterestsIndoor(string $interestsIndoor): void
-    {
-        $this->_interestsIndoor = $interestsIndoor;
-    }
-
-    /** This will get the interests outdoor  (getter)
-     * @return string that is interests outdoor
-     */
-    public function getInterestsOutdoor(): string
-    {
-        return $this->_interestsOutdoor;
-    }
-
-    /**This will set the last name (setter)
-     * @param string $lname
-     * @return void
-     */
-    public function setinterestsOutdoor(string $interestsOutdoor): void
-    {
-        $this->_interestsOutdoor = $interestsOutdoor;
-    }
 }

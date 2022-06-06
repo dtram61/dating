@@ -19,22 +19,19 @@ class Membership {
      * @param $gender
      * @param $phone
      * @param $email
-     * @param $biography
-     * @param $state
-     * @param $seeking
+     *
      */
     // membership constructor
-    public function __construct()
+    public function __construct(string $fname = "", string $lname = "" , int $age= 19 , string $gender = "" , string $phone = "",
+    string $email = "" )
     {
-        $this->_fname = "";
-        $this->_lname = "";
-        $this->_age = "";
-        $this->_gender = "";
-        $this->_phone = "";
-        $this->_email = "";
-        $this->_biography = "";
-        $this->_state = "";
-        $this->_seeking = "";
+        $this->_fname = $fname;
+        $this->_lname = $lname;
+        $this->_age = $age;
+        $this->_gender = $gender;
+        $this->_phone = $phone;
+        $this->_email = $email;
+
     }
 
     /** This will get the first name (getter)
@@ -49,7 +46,7 @@ class Membership {
      * @param string $fname
      * @return void
      */
-    public function setFname(string $fname): void
+    public function setFname(string $fname)
     {
         $this->_fname = $fname;
     }
@@ -66,7 +63,7 @@ class Membership {
      * @param string $lname
      * @return void
      */
-    public function setLname(string $lname): void
+    public function setLname(string $lname)
     {
         $this->_lname = $lname;
     }
@@ -82,7 +79,7 @@ class Membership {
      * @param string $age
      * @return void
      */
-    public function setAge(string $age): void
+    public function setAge(string $age)
     {
         $this->_age = $age;
     }
@@ -98,7 +95,7 @@ class Membership {
      * @param string $gender
      * @return void
      */
-    public function setGender(string $gender): void
+    public function setGender(string $gender)
     {
         $this->_gender = $gender;
     }
@@ -114,7 +111,7 @@ class Membership {
      * @param string $phone
      * @return void
      */
-    public function setPhone(string $phone): void
+    public function setPhone(string $phone)
     {
         $this->_phone = $phone;
     }
@@ -130,7 +127,7 @@ class Membership {
      * @param string $email
      * @return void
      */
-    public function setEmail(string $email): void
+    public function setEmail(string $email)
     {
         $this->_email = $email;
     }
@@ -146,7 +143,7 @@ class Membership {
      * @param string $biography
      * @return void
      */
-    public function setBiography(string $biography): void
+    public function setBiography(string $biography)
     {
         $this->_biography = $biography;
     }
@@ -162,7 +159,7 @@ class Membership {
      * @param string $state
      * @return void
      */
-    public function setState(string $state): void
+    public function setState(string $state)
     {
         $this->_state = $state;
     }

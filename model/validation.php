@@ -1,14 +1,15 @@
 <?php
 
-
+class Validation
+{
     // validate name
-    function validName($name)
+    static function validName($name)
     {
         return strlen(trim($name)) >= 2;
     }
 
     // validate age
-     function validAge($age)
+  static  function validAge($age)
     {
         if ($age == "") {
             return false;
@@ -20,37 +21,37 @@
     }
 
 // validate phone number
-function validPhone($phone)
-{
-    return strlen($phone) == 10;
-}
+  static  function validPhone($phone)
+    {
+        return strlen($phone) == 10;
+    }
 
-     function validGender($gender)
+   static function validGender($gender)
     {
         return in_array($gender, getGender());
     }
 
 // validate email
-function validEmail($email)
-{
-    if(filter_var($email, FILTER_VALIDATE_EMAIL))
+  static  function validEmail($email)
     {
-        return true;
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    else
+// validate outdoor activities
+   static function validOutdoor($interestsOutdoor)
     {
-        return false;
+        return in_array($interestsOutdoor, Datalayer::getOutdoorInterest());
+    }
+
+// validate indoor activities
+ static function validIndoor($interestsIndoor)
+    {
+        return in_array($interestsIndoor, Datalayer::getIndoorInterest());
     }
 }
-// validate outdoor activities
-     function validOutdoor($outdoor)
-    {
-        return in_array($outdoor, getOutdoorInterest());
-    }
-// validate indoor activities
-     function validIndoor($interestsIndoor)
-    {
-        return in_array($interestsIndoor, getIndoorInterest());
-    }
+
 
