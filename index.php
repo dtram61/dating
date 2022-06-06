@@ -51,9 +51,9 @@ $GLOBALS['con']->interests($f3);
 });
 
 // Create a route for profile summary
-$f3->route('GET|POST /summary', function () {
+$f3->route('GET|POST /summary', function () use ($f3) {
 
-   $GLOBALS['con']->summary();
+   $GLOBALS['con']->summary($f3);
 
 
 

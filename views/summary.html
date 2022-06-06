@@ -47,10 +47,19 @@
             <p>Seeking: {{ @SESSION.seeking}}</p>
 
         </div>
+        <check if="{{isset(@errors['interestsIndoor'])}}">
         <div class="container border">
 
-            <p>Interests: {{ @SESSION.interestsIndoor}} {{ @SESSION.interestsOutdoor}}</p>
+            <p>Interests Indoor: {{ @SESSION.interestsIndoor}}  </p>
         </div>
+        </check>
+
+        <check if="{{isset(@errors['interestsOutdoor'])}}">
+            <div class="container border">
+
+                <p>Interests Outdoor: {{ @SESSION.interestsOutdoor}}  </p>
+            </div>
+        </check>
 
         <div class="container border">
 

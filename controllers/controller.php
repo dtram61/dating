@@ -180,6 +180,7 @@ class Controller
              if ($_SESSION['profile'] instanceof premium) {
                  header('location: interests');
              } else {
+
                  header('location: summary');
              }
              //  header('location: interests');
@@ -255,9 +256,28 @@ class Controller
      echo $view->render('views/interests.html');
  }
 
- function summary()
+ function summary($f3)
  {
      var_dump($_SESSION);
+
+    $member = $_SESSION['profile'];
+     $interestsIndoor =$_SESSION['interestsIndoor'];
+     if ($_SESSION['profile'] instanceof premium) {
+
+         if ($interestsIndoor != null) {
+             $f3->set('errors["interestsIndoor"]', $member->getInterestsIndoor());
+
+             $_SESSION['interestsIndoor'] = implode(', ', $member->getInterestsIndoor());
+         }
+
+         $interestsOutdoor = $_SESSION['interestsOutdoor'];
+         if ($interestsOutdoor != null) {
+             $f3->set('errors["interestsOutdoor"]', $member->getInterestsOutdoor());
+
+             $_SESSION['interestsOutdoor'] = implode(', ', $member->getInterestsOutdoor());
+         }
+     }
+
 
 
 
