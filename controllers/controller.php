@@ -18,10 +18,16 @@ class Controller
 
  function personal($f3)
  {
+     //require_once '/home/dtramgre/config.php';
+     require_once $_SERVER['DOCUMENT_ROOT'].'/../config.php';
+
      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
-
+        var_dump($_SESSION);
+        var_dump($_POST);
+        return;
+// doesn't exists
          $member = $_SESSION['member'];
         $GLOBALS['member'];
          $fname = $_POST['fname']; // get first name from post array
@@ -29,11 +35,14 @@ class Controller
 
          $f3->set('fname', $fname); // add the user's first name to the hive
 
-
+// use this format for premium
          $fname = isset($_POST['fname']) ? $_POST['fname'] : "";
 
          // validate first name // check again
-         if($_SESSION['profile'] instanceof premium) {
+// use isset to check if the premium has been checked for premium
+
+         //doesn't exist
+         if(isset($_POST['premium']) ? $_POST['premium'] : "") {
             $member = new Premium();
          }
          else {
@@ -121,6 +130,8 @@ class Controller
          if (empty($f3->get('errors'))) {
              header('location: profile');
          }
+
+
      }
      var_dump($member);
      $view = new Template();
@@ -285,4 +296,9 @@ class Controller
      echo $view->render('views/summary.html');
 
  }
+
+    function testSQL ($f3){
+        $view = new Template();
+        echo $view->render('views/testSQL.php');
+    }
 }
