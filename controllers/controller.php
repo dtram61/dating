@@ -41,14 +41,24 @@ class Controller
          // validate first name // check again
 // use isset to check if the premium has been checked for premium
 
-         //doesn't exist
-         if(isset($_POST['premium']) ? $_POST['premium'] : "") {
+         //if the user is checked , create premium otherwise not checked create regular memebership
+         if(isset($_POST['premium']) ) {
             $member = new Premium();
          }
          else {
              $member = new Membership();
 
          }
+
+         //task 1 create comment
+         // task 2 put session array later in $member
+         // task 3 changed set name
+         // task 4get rid of session fname = $fname
+         // line 77 changed
+         // profile dont use $memeber on profile
+
+         $_SESSION['member'] = new Premium();
+         $_SESSION['member']->setFname($fname);
 
          if (Validation::validName($fname)) {
 
